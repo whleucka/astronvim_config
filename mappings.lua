@@ -18,8 +18,8 @@ return {
     },
     ["<leader>b"] = { name = "Buffers" },
     -- Custom mappings below
-    H = { "<cmd>br<CR>", desc = "Left buffer" },
-    L = { "<cmd>bl<CR>", desc = "Right buffer" },
+    H = { "<cmd>bl<CR>", desc = "Left buffer" },
+    L = { "<cmd>br<CR>", desc = "Right buffer" },
     ["<leader>,"] = { "0w", desc = "BOL" },
     ["<leader>."] = { "$", desc = "EOL" },
   },

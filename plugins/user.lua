@@ -7,19 +7,12 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
   },
   {
-    "simrat39/rust-tools.nvim",
-    after = { "mason-lspconfig.nvim" },
-    -- Is configured via the server_registration_override installed below!
-    config = function()
-      require("rust-tools").setup {
-        server = astronvim.lsp.server_settings "rust_analyzer",
-        tools = {
-          inlay_hints = {
-            parameter_hints_prefix = "  ",
-            other_hints_prefix = "  ",
-          },
-        },
-      }
-    end,
-  },
+    "simrat39/rust-tools.nvim", -- add lsp plugin
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "rust_analyzer" },
+      },
+    },
+  }
 }
