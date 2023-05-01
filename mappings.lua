@@ -22,6 +22,12 @@ return {
     L = { "<cmd>br<CR>", desc = "Right buffer" },
     ["<leader>,"] = { "0w", desc = "BOL" },
     ["<leader>."] = { "$", desc = "EOL" },
+    ["<leader>rr"] = { "<cmd>RustRun<cr>", desc = "Rust Run" },
+    ["<leader>ra"] = { "<cmd>RustCodeActions<cr>", desc = "Rust Code Actions" },
+    ["<leader>rc"] = { "<cmd>RustHoverActions<cr>", desc = "Rust Hover Actions" },
+    ["<leader>rd"] = { "<cmd>RustDebuggables<cr>", desc = "Rust Debuggables" },
+    ["<leader>ri"] = { "<cmd>RustEnableInlayHints<cr>", desc = "Rust Enable Inlay Hints" },
+    ["<leader>ro"] = { "<cmd>RustDisableInlayHints<cr>", desc = "Rust Disable Inlay Hints" },
   },
   t = {
     -- setting a mapping to false will disable it

@@ -4,6 +4,15 @@ call serverstart(tempname())
 let &titlestring="nvim %F -- [" . v:servername . "]"
 set title
 ]]
+
+-- Package installation folder
+local install_root_dir = vim.fn.stdpath "data" .. "/mason"
+-- DAP settings - https://github.com/simrat39/rust-tools.nvim#a-better-debugging-experience
+local extension_path = install_root_dir .. "/packages/codelldb/extension/"
+-- Install with yay -S codelldb-bin
+local codelldb_path = "/usr/bin/codelldb"
+local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -60,7 +69,14 @@ return {
     },
     setup_handlers = {
       -- add custom handler
-      rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
+      rust_analyzer = function(_, opts) 
+        require("rust-tools").setup { 
+          server = opts,
+          dap = {
+            adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+          }
+        } 
+      end
     },
   },
 
