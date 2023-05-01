@@ -74,10 +74,36 @@ return {
           server = opts,
           dap = {
             adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-          }
+          },
+          tools = {
+            on_initialized = function()
+              vim.cmd [[
+              autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
+              ]]
+            end,
+          },
         } 
       end
     },
+  },
+
+  dap = {
+    adapters = {
+      python = {
+        type = "executable",
+        command = "/usr/bin/python3",
+        args = {
+          "-m",
+          "debugpy.adapter",
+        },
+      }
+    }, 
+    configurations = {
+      type = "python",
+      request = "launch",
+      name = "Launch file",
+      program = "${file}",
+    }
   },
 
   -- Configure require("lazy").setup() options
