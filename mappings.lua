@@ -18,8 +18,8 @@ return {
     },
     ["<leader>b"] = { name = "Buffers" },
     -- Custom mappings below
-    H = { "<cmd>br<CR>", desc = "Left buffer" },
-    L = { "<cmd>bl<CR>", desc = "Right buffer" },
+    H = { "<cmd>bprevious<CR>", desc = "Left buffer" },
+    L = { "<cmd>bnext<CR>", desc = "Right buffer" },
     ["<leader>,"] = { "0w", desc = "BOL" },
     ["<leader>."] = { "$", desc = "EOL" },
     ["<leader>rr"] = { "<cmd>RustRun<cr>", desc = "Rust Run" },
