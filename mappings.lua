@@ -20,8 +20,8 @@ return {
     -- Custom mappings below
     H = { "<cmd>bprevious<CR>", desc = "Left buffer" },
     L = { "<cmd>bnext<CR>", desc = "Right buffer" },
-    ["<leader>,"] = { "0w", desc = "BOL" },
-    ["<leader>."] = { "$", desc = "EOL" },
+    ["<C-[>"] = { "^", desc = "BOL" },
+    ["<C-]>"] = { "$", desc = "EOL" },
     ["<leader>rr"] = { "<cmd>RustRun<cr>", desc = "Rust Run" },
     ["<leader>rl"] = { ":lua vim.lsp.codelens.run()<cr>", desc = "Rust Code Lens" },
     ["<leader>ra"] = { "<cmd>RustCodeAction<cr>", desc = "Rust Code Action" },
