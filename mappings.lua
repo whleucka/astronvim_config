@@ -6,6 +6,7 @@
 return {
   -- first key is the mode
   n = {
+    ["<c-p>"] = { "<cmd>Telescope find_files<cr>", desc = "Floating terminal" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
