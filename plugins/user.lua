@@ -5,15 +5,10 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("user.plugins.config.tokyonight")
+    end
   },
-  -- {
-  --   'E-ricus/lsp_codelens_extensions.nvim',
-  --   -- Only required for debugging
-  --   dependencies = {"nvim-lua/plenary.nvim", "mfussenegger/nvim-dap"},
-  --   config = function ()
-  --     require("codelens_extensions").setup()
-  --   end,
-  -- },
   {
     "simrat39/rust-tools.nvim", -- add lsp plugin
     {
@@ -21,11 +16,11 @@ return {
       opts = {
         ensure_installed = { "rust_analyzer" },
         settings = {
-            ["rust-analyzer"] = {
-                checkOnSave = {
-                    command = "clippy"
-                }, 
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy"
             },
+          },
         }
       },
     },

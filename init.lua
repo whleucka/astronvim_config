@@ -69,8 +69,8 @@ return {
     },
     setup_handlers = {
       -- add custom handler
-      rust_analyzer = function(_, opts) 
-        require("rust-tools").setup { 
+      rust_analyzer = function(_, opts)
+        require("rust-tools").setup {
           server = opts,
           dap = {
             adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
@@ -82,7 +82,7 @@ return {
               ]]
             end,
           },
-        } 
+        }
       end
     },
   },
@@ -97,7 +97,7 @@ return {
           "debugpy.adapter",
         },
       }
-    }, 
+    },
     configurations = {
       type = "python",
       request = "launch",
