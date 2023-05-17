@@ -10,19 +10,7 @@ return {
     end
   },
   {
-    "simrat39/rust-tools.nvim", -- add lsp plugin
-    {
-      "williamboman/mason-lspconfig.nvim",
-      opts = {
-        ensure_installed = { "rust_analyzer" },
-        settings = {
-          ["rust-analyzer"] = {
-            checkOnSave = {
-              command = "clippy"
-            },
-          },
-        }
-      },
-    },
-  },
+    "AstroNvim/astrocommunity",
+    { import = "astrocommunity.pack.rust" },
+  }
 }

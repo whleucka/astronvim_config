@@ -23,7 +23,7 @@ return {
     L = { "<cmd>bnext<CR>", desc = "Right buffer" },
     ["<C-[>"] = { "^", desc = "BOL" },
     ["<C-]>"] = { "$", desc = "EOL" },
-    ["<leader>rr"] = { "<cmd>RustRun<cr>", desc = "Rust Run" },
+    ["<leader>rr"] = { "<cmd>RustRunnables<cr>", desc = "Rust Runnables" },
     ["<leader>rl"] = { ":lua vim.lsp.codelens.run()<cr>", desc = "Rust Code Lens" },
     ["<leader>ra"] = { "<cmd>RustCodeAction<cr>", desc = "Rust Code Action" },
     ["<leader>rd"] = { "<cmd>RustDebuggables<cr>", desc = "Rust Debuggables" },
