@@ -9,6 +9,7 @@ return {
       require("user.plugins.config.tokyonight")
     end
   },
+  { 'nvim-treesitter/nvim-treesitter-context'},
   {
     "AstroNvim/astrocommunity",
     { import = "astrocommunity.pack.rust" },
@@ -18,5 +19,5 @@ return {
     { import = "astrocommunity.pack.bash" },
     { import = "astrocommunity.pack.lua" },
     { import = "astrocommunity.git.neogit" },
-  }
+  },
 }
