@@ -12,5 +12,11 @@ return {
   {
     "AstroNvim/astrocommunity",
     { import = "astrocommunity.pack.rust" },
+    { import = "astrocommunity.pack.php" },
+    { import = "astrocommunity.pack.python" },
+    { import = "astrocommunity.pack.typescript" },
+    { import = "astrocommunity.pack.bash" },
+    { import = "astrocommunity.pack.lua" },
+    { import = "astrocommunity.git.neogit" },
   }
 }

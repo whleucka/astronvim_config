@@ -7,11 +7,6 @@ set title
 
 -- Package installation folder
 local install_root_dir = vim.fn.stdpath "data" .. "/mason"
--- DAP settings - https://github.com/simrat39/rust-tools.nvim#a-better-debugging-experience
-local extension_path = install_root_dir .. "/packages/codelldb/extension/"
--- Install with yay -S codelldb-bin
-local codelldb_path = "/usr/bin/codelldb"
-local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
 return {
   -- Configure AstroNvim updates
