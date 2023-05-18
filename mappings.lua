@@ -6,14 +6,14 @@
 return {
   -- first key is the mode
   n = {
+    ["<c-g>"] = { "<cmd>Neogit kind=split<cr>", desc = "Floating terminal" },
     ["<c-p>"] = { "<cmd>Telescope find_files<cr>", desc = "Floating terminal" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
-          require("astronvim.utils.buffer").close(
-            bufnr)
-        end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },
@@ -21,10 +21,9 @@ return {
     -- Custom mappings below
     H = { "<cmd>bprevious<CR>", desc = "Left buffer" },
     L = { "<cmd>bnext<CR>", desc = "Right buffer" },
-    ["<C-[>"] = { "^", desc = "BOL" },
-    ["<C-]>"] = { "$", desc = "EOL" },
+    ["<c-h>"] = { "^", desc = "BOL" },
+    ["<c-l>"] = { "$", desc = "EOL" },
     ["<leader>rr"] = { "<cmd>RustRunnables<cr>", desc = "Rust Runnables" },
-    ["<leader>rl"] = { ":lua vim.lsp.codelens.run()<cr>", desc = "Rust Code Lens" },
     ["<leader>ra"] = { "<cmd>RustCodeAction<cr>", desc = "Rust Code Action" },
     ["<leader>rd"] = { "<cmd>RustDebuggables<cr>", desc = "Rust Debuggables" },
     ["<leader>ri"] = { "<cmd>RustEnableInlayHints<cr>", desc = "Rust Enable Inlay Hints" },
