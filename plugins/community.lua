@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.colorscheme.tokyonight" },
+  { import = "astrocommunity.scrolling.satellite-nvim" },
   {
     "folke/tokyonight.nvim",
     config = require "user.plugins.config.tokyonight",
