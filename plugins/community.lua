@@ -8,7 +8,7 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.git.neogit" },
-  { import = "astrocommunity.colorscheme.tokyonight" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.scrolling.satellite-nvim" },
   {
     "folke/tokyonight.nvim",
