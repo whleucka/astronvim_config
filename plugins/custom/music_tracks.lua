@@ -30,7 +30,8 @@ local function search_music_tracks()
   handle:close()
 
   -- Parse the JSON response
-  local tracks = vim.fn.json_decode(result)
+  local res = vim.fn.json_decode(result)
+  local tracks = res.data
 
   -- Create the Telescope picker and display the results
   pickers.new({}, {
