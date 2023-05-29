@@ -8,7 +8,7 @@ return {
   n = {
     ["<c-g>"] = { "<cmd>Neogit kind=split<cr>", desc = "Floating terminal" },
     ["<c-p>"] = { "<cmd>Telescope find_files<cr>", desc = "Floating terminal" },
-    ["<c-m>"] = { ":lua require('./plugins/custom/music_tracks').search_music_tracks()<cr>", desc = "Test" },
+    ["<c-m>"] = { ":lua require('./plugins/custom/soprano').search()<cr>", desc = "Test" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()

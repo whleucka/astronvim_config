@@ -3,6 +3,7 @@ local actions = require('telescope.actions')
 local finders = require('telescope.finders')
 local pickers = require('telescope.pickers')
 local conf = require('telescope.config').values
+local action_state = require "telescope.actions.state"
 
 local api_endpoint = "https://hleucka.ddns.net/api/v1"
 
@@ -17,9 +18,9 @@ telescope.setup({
 })
 
 
-local function search_music_tracks()
-  local search_term = vim.fn.input('Enter search term: ')
+local function search()
   local search_type = vim.fn.input('Enter search type (title/artist/album/genre): ')
+  local search_term = vim.fn.input('Enter search term: ')
 
   -- Create the cURL command to fetch music tracks from the API endpoint
   local curl_command = string.format('curl -X POST -d \'term=%s\' -d \'type=%s\' ' .. api_endpoint .. '"/music/search"', search_term, search_type)
@@ -35,12 +36,12 @@ local function search_music_tracks()
 
   -- Create the Telescope picker and display the results
   pickers.new({}, {
-    prompt_title = 'Music Tracks',
+    prompt_title = 'What do you want to listen to?',
     finder = finders.new_table {
       results = tracks,
       entry_maker = function(track)
         return {
-          display = string.format('%s - %s', track.title, track.artist),
+          display = string.format('%s - %s', track.artist, track.title),
           ordinal = string.format('%s %s %s', track.title, track.artist, track.album),
           value = track.md5,
         }
@@ -49,10 +50,12 @@ local function search_music_tracks()
     sorter = conf.generic_sorter({}),
     attach_mappings = function(prompt_bufnr, map)
       local play_track = function()
-        local selection = actions.get_selected_entry()
+
+        local selection = action_state.get_selected_entry()
         actions.close(prompt_bufnr)
         -- Play the selected track using MPV or your preferred media player
-        vim.fn.jobstart('mpv ' .. api_endpoint .. '/music/play/' .. selection.value)
+        local command = 'mpv --video=no ' .. api_endpoint .. '/music/play/' .. selection.value 
+        require("toggleterm").exec(command, nil, nil, "", "horizontal")
       end
 
       -- Map a key to play the selected track
@@ -65,5 +68,5 @@ local function search_music_tracks()
 end
 
 return {
-  search_music_tracks = search_music_tracks,
+  search = search,
 }
