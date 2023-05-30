@@ -18,7 +18,7 @@ return {
     autoformat_enabled = true,
     cmp_enabled = true,
     autopairs_enabled = true,
-    diagnostics_mode = 3,            -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
+    diagnostics_mode = 3, -- (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true,
     ui_notifications_enabled = true,
   },
