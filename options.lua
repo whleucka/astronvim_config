@@ -1,12 +1,17 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
+    encoding = "utf-8",
     relativenumber = true,
     number = true,
     spell = false,
-    signcolumn = "auto",
+    spelllang = { "en" },
     wrap = true,
     swapfile = false,
+    backup = false,
+    laststatus = 3,
+    guicursor = "",
+    signcolumn = "yes",
   },
   g = {
     mapleader = " ",
