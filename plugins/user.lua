@@ -3,5 +3,8 @@ return {
   -- Add plugins, the lazy syntax
   { "nvim-treesitter/nvim-treesitter-context" },
   { "barrett-ruth/telescope-http.nvim" },
-  { "whleucka/soprano.nvim" }
+  {
+    "whleucka/soprano.nvim",
+    event = "VeryLazy",
+  },
 }
