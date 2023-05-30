@@ -10,8 +10,8 @@ return {
     ["<c-p>"] = { "<cmd>Telescope find_files<cr>", desc = "Floating terminal" },
     ["<leader>["] = { "^", desc = "BOL" },
     ["<leader>]"] = { "$", desc = "EOL" },
-    ["<leader>ms"] = { ":lua require('soprano').search()<cr>", desc = "Soprano music search" },
-    ["<leader>mr"] = { ":lua require('soprano').radio()<cr>", desc = "Soprano radio" },
+    ["<leader>ss"] = { ":lua require('soprano').search()<cr>", desc = "Soprano music search" },
+    ["<leader>sr"] = { ":lua require('soprano').radio()<cr>", desc = "Soprano radio" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()

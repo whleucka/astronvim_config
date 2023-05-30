@@ -10,10 +10,6 @@ return {
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.scrolling.satellite-nvim" },
-  {
-    "folke/tokyonight.nvim",
-    config = require "user.plugins.config.tokyonight",
-  },
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
