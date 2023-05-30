@@ -8,6 +8,8 @@ return {
   n = {
     ["<c-g>"] = { "<cmd>Neogit kind=split<cr>", desc = "Floating terminal" },
     ["<c-p>"] = { "<cmd>Telescope find_files<cr>", desc = "Floating terminal" },
+    ["<leader>["] = { "^", desc = "BOL" },
+    ["<leader>]"] = { "$", desc = "EOL" },
     ["<leader>ms"] = { ":lua require('soprano').search()<cr>", desc = "Soprano music search" },
     ["<leader>mr"] = { ":lua require('soprano').radio()<cr>", desc = "Soprano radio" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
@@ -23,8 +25,6 @@ return {
     -- Custom mappings below
     H = { "<cmd>bprevious<CR>", desc = "Left buffer" },
     L = { "<cmd>bnext<CR>", desc = "Right buffer" },
-    ["<c-h>"] = { "^", desc = "BOL" },
-    ["<c-l>"] = { "$", desc = "EOL" },
     ["<leader>rr"] = { "<cmd>RustRunnables<cr>", desc = "Rust Runnables" },
     ["<leader>ra"] = { "<cmd>RustCodeAction<cr>", desc = "Rust Code Action" },
     ["<leader>rd"] = { "<cmd>RustDebuggables<cr>", desc = "Rust Debuggables" },
