@@ -10,8 +10,8 @@ return {
     ["<c-p>"] = { "<cmd>Telescope find_files<cr>", desc = "Floating terminal" },
     ["<leader>["] = { "^", desc = "BOL" },
     ["<leader>]"] = { "$", desc = "EOL" },
-    ["<leader>ss"] = { ":lua require('soprano').search()<cr>", desc = "Soprano music search" },
-    ["<leader>sr"] = { ":lua require('soprano').radio()<cr>", desc = "Soprano radio" },
+    ["<leader>ss"] = { "<cmd>lua require('soprano').search()<cr>", desc = "Soprano music search" },
+    ["<leader>sr"] = { "<cmd>lua require('soprano').radio()<cr>", desc = "Soprano radio" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
@@ -30,9 +30,9 @@ return {
     ["<leader>rd"] = { "<cmd>RustDebuggables<cr>", desc = "Rust Debuggables" },
     ["<leader>ri"] = { "<cmd>RustEnableInlayHints<cr>", desc = "Rust Enable Inlay Hints" },
     ["<leader>ro"] = { "<cmd>RustDisableInlayHints<cr>", desc = "Rust Disable Inlay Hints" },
-    ["<leader>ir"] = { ":lua require('neotest').run.run()", desc = "PHPUnit test single method"},
-    ["<leader>if"] = { ":lua require('neotest').run.run(vim.fn.expand('%'))", desc = "PHPUnit test file"},
-    ["<leader>it"] = { ":lua require('neotest').run.run({ suite = true })", desc = "PHPUnit test suite"},
+    ["<leader>ir"] = { "<cmd>lua require('neotest').run.run()<cr>", desc = "PHPUnit test single method"},
+    ["<leader>if"] = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", desc = "PHPUnit test file"},
+    ["<leader>it"] = { "<cmd>lua require('neotest').run.run({ suite = true })<cr>", desc = "PHPUnit test suite"},
   },
   t = {
     -- setting a mapping to false will disable it
