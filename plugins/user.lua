@@ -12,6 +12,20 @@ return {
     event = "VeryLazy",
   },
   {
+    "nvim-neotest/neotest",
+    lazy = true,
+    dependencies = {
+      "olimorris/neotest-phpunit",
+    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-phpunit")
+        },
+      })
+    end
+  },
+  {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
       local status = require "astronvim.utils.status"

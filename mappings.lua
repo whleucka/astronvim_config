@@ -30,6 +30,9 @@ return {
     ["<leader>rd"] = { "<cmd>RustDebuggables<cr>", desc = "Rust Debuggables" },
     ["<leader>ri"] = { "<cmd>RustEnableInlayHints<cr>", desc = "Rust Enable Inlay Hints" },
     ["<leader>ro"] = { "<cmd>RustDisableInlayHints<cr>", desc = "Rust Disable Inlay Hints" },
+    ["<leader>ir"] = { ":lua require('neotest').run.run()", desc = "PHPUnit test single method"},
+    ["<leader>if"] = { ":lua require('neotest').run.run(vim.fn.expand('%'))", desc = "PHPUnit test file"},
+    ["<leader>it"] = { ":lua require('neotest').run.run({ suite = true })", desc = "PHPUnit test suite"},
   },
   t = {
     -- setting a mapping to false will disable it
