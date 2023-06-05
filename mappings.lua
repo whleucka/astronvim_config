@@ -33,6 +33,8 @@ return {
     ["<leader>ir"] = { "<cmd>lua require('neotest').run.run()<cr>", desc = "PHPUnit test single method"},
     ["<leader>if"] = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", desc = "PHPUnit test file"},
     ["<leader>it"] = { "<cmd>lua require('neotest').run.run({ suite = true })<cr>", desc = "PHPUnit test suite"},
+    ["<leader>is"] = { "<cmd>lua require('neotest').summary.toggle({ enter = true })<cr>", desc = "PHPUnit toggle test summary"},
+    ["<leader>io"] = { "<cmd>lua require('neotest').output_panel.toggle({ enter = true })<cr>", desc = "PHPUnit toggle output panel"},
   },
   t = {
     -- setting a mapping to false will disable it
