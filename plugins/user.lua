@@ -22,7 +22,7 @@ return {
         adapters = {
           require("neotest-phpunit")({
             phpunit_cmd = function()
-              return "/bin/phpunit"
+              return "./bin/phpunit"
             end
           })
         },
