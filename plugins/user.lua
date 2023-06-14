@@ -1,3 +1,15 @@
+--- Check if a file or directory exists in this path
+function exists(file)
+   local ok, err, code = os.rename(file, file)
+   if not ok then
+      if code == 13 then
+         -- Permission denied, but it exists
+         return true
+      end
+   end
+   return ok, err
+end
+
 return {
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
@@ -22,6 +34,11 @@ return {
         adapters = {
           require("neotest-phpunit")({
             phpunit_cmd = function()
+              if exists('./vendor/bin/phpunit') then
+                -- composer phpuit
+                return "./vendor/bin/phpunit"
+              end
+              -- phar in bin 
               return "./bin/phpunit"
             end
           })
