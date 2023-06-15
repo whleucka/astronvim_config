@@ -35,6 +35,8 @@ return {
     ["<leader>it"] = { "<cmd>lua require('neotest').run.run({ suite = true })<cr>", desc = "PHPUnit test suite"},
     ["<leader>is"] = { "<cmd>lua require('neotest').summary.toggle({ enter = true })<cr>", desc = "PHPUnit toggle test summary"},
     ["<leader>io"] = { "<cmd>lua require('neotest').output_panel.toggle({ enter = true })<cr>", desc = "PHPUnit toggle output panel"},
+    ["<F2>"] = { "<cmd>%s/\\s\\+$//e<cr>", desc = "Remove unwanted whitespace"},
+    ["<F3>"] = { "<cmd>set spell!<cr>", desc = "Toggle spell checking"}
   },
   t = {
     -- setting a mapping to false will disable it
