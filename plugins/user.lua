@@ -1,13 +1,13 @@
 --- Check if a file or directory exists in this path
 function exists(file)
-   local ok, err, code = os.rename(file, file)
-   if not ok then
-      if code == 13 then
-         -- Permission denied, but it exists
-         return true
-      end
-   end
-   return ok, err
+  local ok, err, code = os.rename(file, file)
+  if not ok then
+    if code == 13 then
+      -- Permission denied, but it exists
+      return true
+    end
+  end
+  return ok, err
 end
 
 return {
@@ -20,6 +20,28 @@ return {
     config = require "user.plugins.config.tokyonight",
   },
   {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          -- default options: exact mode, multi window, all directions, with a backdrop
+          require("flash").jump()
+        end,
+      },
+      {
+        "S",
+        mode = { "o", "x" },
+        function() require("flash").treesitter() end,
+      },
+    },
+  },
+
+  {
     "whleucka/soprano.nvim",
     event = "VeryLazy",
   },
@@ -30,21 +52,21 @@ return {
       "olimorris/neotest-phpunit",
     },
     config = function()
-      require("neotest").setup({
+      require("neotest").setup {
         adapters = {
-          require("neotest-phpunit")({
+          require "neotest-phpunit" {
             phpunit_cmd = function()
-              if exists('./vendor/bin/phpunit') then
+              if exists "./vendor/bin/phpunit" then
                 -- composer phpuit
                 return "./vendor/bin/phpunit"
               end
-              -- phar in bin 
+              -- phar in bin
               return "./bin/phpunit"
-            end
-          })
+            end,
+          },
         },
-      })
-    end
+      }
+    end,
   },
   {
     "rebelot/heirline.nvim",
@@ -64,10 +86,8 @@ return {
         provider = " ⏮ ",
         on_click = {
           callback = function()
-            if vim.fn.executable('socat') ~= 1 then
-		          error("mpv is not installed.")
-	          end
-            os.execute('echo playlist-prev | socat - /tmp/mpvsocket')
+            if vim.fn.executable "socat" ~= 1 then error "mpv is not installed." end
+            os.execute "echo playlist-prev | socat - /tmp/mpvsocket"
           end,
           name = "previous_track",
         },
@@ -76,10 +96,8 @@ return {
         provider = " ▶ ",
         on_click = {
           callback = function()
-            if vim.fn.executable('socat') ~= 1 then
-		          error("mpv is not installed.")
-	          end
-            os.execute('echo cycle pause | socat - /tmp/mpvsocket')
+            if vim.fn.executable "socat" ~= 1 then error "mpv is not installed." end
+            os.execute "echo cycle pause | socat - /tmp/mpvsocket"
           end,
           name = "play_pause",
         },
@@ -88,10 +106,8 @@ return {
         provider = " ⏭ ",
         on_click = {
           callback = function()
-            if vim.fn.executable('socat') ~= 1 then
-		          error("mpv is not installed.")
-	          end
-            os.execute('echo playlist-next | socat - /tmp/mpvsocket')
+            if vim.fn.executable "socat" ~= 1 then error "mpv is not installed." end
+            os.execute "echo playlist-next | socat - /tmp/mpvsocket"
           end,
           name = "next_track",
         },
