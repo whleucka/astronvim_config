@@ -47,7 +47,7 @@ return {
   },
   {
     "nvim-neotest/neotest",
-    lazy = true,
+    event = "VeryLazy",
     dependencies = {
       "olimorris/neotest-phpunit",
     },
@@ -70,6 +70,7 @@ return {
   },
   {
     "rebelot/heirline.nvim",
+    event = "VeryLazy",
     opts = function(_, opts)
       local status = require "astronvim.utils.status"
       local soprano_component = {
