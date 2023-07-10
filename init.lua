@@ -78,5 +78,6 @@ return {
   polish = function()
     vim.keymap.set("n", "j", "gj", { silent = true })
     vim.keymap.set("n", "k", "gk", { silent = true })
+    vim.cmd[[set clipboard+=unnamedplus]]
   end,
 }
