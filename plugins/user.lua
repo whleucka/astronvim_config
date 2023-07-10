@@ -21,6 +21,17 @@ return {
     },
     config = function() require "user.plugins.config.neotest" end,
   },
+  {
+    "ojroques/vim-oscyank",
+    config = function()
+      -- copy to clip
+      vim.keymap.set('n', '<leader>y', '<Plug>OSCYankOperator')
+      -- current line
+      vim.keymap.set('n', '<leader>yy', '<leader>c_', {remap = true})
+      -- copy current selection
+      vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual')
+    end
+  },
   -- {
   --   "whleucka/soprano.nvim",
   --   dependencies = {

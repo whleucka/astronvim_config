@@ -9,8 +9,8 @@ return {
     ["<c-g>"] = { "<cmd>Neogit kind=split<cr>", desc = "Floating terminal" },
     ["<leader>]"] = { "<cmd>cnext<cr>", desc = "Quickfix next" },
     ["<leader>["] = { "<cmd>cprev<cr>", desc = "Quickfix prev" },
-    ["<leader>ss"] = { "<cmd>lua require('soprano').search()<cr>", desc = "Soprano music search" },
-    ["<leader>sr"] = { "<cmd>lua require('soprano').radio()<cr>", desc = "Soprano radio" },
+    -- ["<leader>ss"] = { "<cmd>lua require('soprano').search()<cr>", desc = "Soprano music search" },
+    -- ["<leader>sr"] = { "<cmd>lua require('soprano').radio()<cr>", desc = "Soprano radio" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
