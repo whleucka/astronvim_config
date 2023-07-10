@@ -4,7 +4,7 @@ return {
   { "nvim-treesitter/nvim-treesitter-context" },
   {
     "folke/tokyonight.nvim",
-    config = require "user.plugins.config.tokyonight",
+    opts = require "user.plugins.config.tokyonight",
   },
   {
     "folke/flash.nvim",
